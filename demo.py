@@ -349,7 +349,7 @@ if __name__ == '__main__':
 
   for i in range(len(keep_boxes)):
       kind = objects[i]+1
-      bbox = boxes[i, kind * 4: (kind + 1) * 4]
+      bbox = boxes[i, kind * 4: (kind + 1) * 4].cpu()
       # bbox = boxes[i]
       if bbox[0] == 0:
           bbox[0] = 1
