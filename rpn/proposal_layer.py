@@ -1,10 +1,11 @@
 import torch
 import torch.nn as nn
 import numpy as np
-from model.utils.config import cfg
+from utils.config import cfg
 from .generate_anchors import generate_anchors
 from .bbox_transform import bbox_transform_inv, clip_boxes
-from model.roi_layers import nms
+import torchvision.ops as ops
+
 
 class _ProposalLayer(nn.Module):
     """
@@ -69,7 +70,7 @@ class _ProposalLayer(nn.Module):
             scores_single = scores_single[order_single].view(-1,1)
 
             # Apply NMS
-            keep_idx_i = nms(proposals_single, scores_single.squeeze(1), nms_thresh)
+            keep_idx_i = ops.nms(proposals_single, scores_single.squeeze(1), nms_thresh)
             keep_idx_i = keep_idx_i[:post_nms_topN]
 
             proposals_single = proposals_single[keep_idx_i, :]

@@ -1,0 +1,4 @@
+[ZoneTransfer]
+ZoneId=3
+ReferrerUrl=https://github.com/shilrley6/Faster-R-CNN-with-model-pretrained-on-Visual-Genome?tab=readme-ov-file
+HostUrl=https://filebox.ece.vt.edu/~jw2yang/faster-rcnn/pretrained-base-models/resnet101_caffe.pth
