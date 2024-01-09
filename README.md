@@ -25,7 +25,7 @@ Download the pretrained model and put it to the folder $load_dir.
 ### Prerequisites
 
 * Python 3.6 or higher
-* Pytorch 1.0
+* Successfully compiled on CUDA12.1 and PyTorch 2.x
 
 ### Preparation
 
